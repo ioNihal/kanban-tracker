@@ -1,0 +1,12 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* Prevent pull-to-refresh on mobile for more native feel */
+  overscroll-behavior-y: none;
+}
+
+.mainContent {
+  flex: 1;
+  overflow: hidden; /* KanbanBoard handles its own scrolling */
+}

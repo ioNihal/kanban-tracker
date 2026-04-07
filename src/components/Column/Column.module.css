@@ -1,0 +1,62 @@
+.column {
+  flex: 0 0 calc(100vw - 48px); /* Mobile view: narrow enough to let the next column peek */
+  max-width: 400px; /* Tablet/Desktop restriction */
+  background: var(--color-bg-surface-alt);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(100vh - 100px);
+  /* Snap alignment for mobile scroll */
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .column {
+    flex: 0 0 350px;
+  }
+}
+
+.header {
+  padding: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-bottom: 2px solid rgba(0,0,0,0.03);
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-base);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+}
+
+.taskList {
+  padding: var(--space-3);
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar for tasks within column to keep it clean */
+.taskList::-webkit-scrollbar {
+  display: none;
+}
+.taskList {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,33 @@
+.boardContainer {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.boardScrollArea {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  padding-bottom: 120px; /* Space for FAB */
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  /* Mobile horizontal snapping */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for board for clean "app" feel */
+.boardScrollArea::-webkit-scrollbar {
+  display: none;
+}
+.boardScrollArea {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.spacer {
+  flex: 0 0 1px;
+}
